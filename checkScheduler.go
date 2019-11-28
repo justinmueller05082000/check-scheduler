@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"flag"
 	"fmt"
 	"io/ioutil"
 	"time"
@@ -12,7 +13,10 @@ type toPrint struct {
 }
 
 func checkScheduler() {
-	content, err := ioutil.ReadFile("toPrint.json")
+	jsonname := flag.String("config", "", "Configuration of the output message")
+	flag.Parse()
+
+	content, err := ioutil.ReadFile(*jsonname)
 	if err != nil {
 		fmt.Println(err.Error())
 	}
