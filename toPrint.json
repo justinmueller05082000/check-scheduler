@@ -1,5 +1,7 @@
 {
-  "text": "check_disk",
-  "times": 100,
-  "pause": 30
+  "check_disk": 3,
+  "check_load": 5,
+  "check_size": 4,
+  "check_apt": 6,
+  "check_tcp": 1
 }
