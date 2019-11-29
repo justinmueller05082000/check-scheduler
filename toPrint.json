@@ -1,3 +1,5 @@
 {
-  "text": "check_disk"
+  "text": "check_disk",
+  "times": 100,
+  "pause": 30
 }
