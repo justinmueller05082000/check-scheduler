@@ -26,18 +26,15 @@ func checkScheduler() {
 		return
 	}
 
-	for text, pause := range prints {
-		go printTest(pause, text)
-	}
+	i := 0
 
 	for {
 		time.Sleep(time.Second)
-	}
-}
-
-func printTest(pause float64, text string) {
-	for {
-		time.Sleep(time.Duration(pause * float64(time.Second)))
-		fmt.Printf("%s %s \n", time.Now().Format("Monday 15:04:05 01-02-2006"), text)
+		i++
+		for text, pause := range prints {
+			if i%int(pause) == 0 {
+				fmt.Printf("%s %s \n", time.Now().Format("Monday 15:04:05 01-02-2006"), text)
+			}
+		}
 	}
 }
